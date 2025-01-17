@@ -1,0 +1,38 @@
+<!--
+ * Библиотечный каталог
+ * Copyright (c) 2024 Alexander
+ * MIT License
+-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Библиотека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📚 Библиотека</h1>
+    <div id="catalog"></div>
+    <script src="Lesson1_Task2_Library.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const catalog = document.getElementById('catalog');
+                if (!catalog) throw new Error('Элемент catalog не найден');
+                
+                for (const book of libraryApp) {
+                    catalog.innerHTML += `
+                        <div class="book-card">
+                            <h3>📖 ${book.title}</h3>
+                            <p>✍️ Автор: ${book.author}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+            }
+        });
+    </script>
+</body>
+</html>

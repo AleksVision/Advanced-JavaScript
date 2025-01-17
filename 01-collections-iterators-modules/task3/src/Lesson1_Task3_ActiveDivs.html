@@ -1,0 +1,58 @@
+<!--
+* Задание 3: Фильтрация активных DOM элементов
+* ===========================================
+* 
+* Задача:
+* 1. Создать HTML страницу с div элементами
+* 2. Добавить атрибут data-active некоторым элементам
+* 3. Подготовить элемент для вывода результатов
+* 4. Подключить JavaScript для фильтрации
+-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фильтрация активных элементов</title>
+    <!-- Стили для визуального оформления -->
+    <style>
+        /* Базовые стили для всех div элементов */
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        /* Особые стили для активных элементов */
+        div[data-active="true"] {
+            border-color: #4CAF50;
+            background: #E8F5E9;
+            font-weight: bold;
+        }
+        /* Стили для блока с результатами */
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background: #F5F5F5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Фильтрация div элементов</h1>
+    
+    <!-- Тестовые div элементы -->
+    <!-- Обычный div без атрибута data-active -->
+    <div>Element 1</div>
+    <!-- Активный div с атрибутом data-active -->
+    <div data-active="true">Element 2 (активный)</div>
+    <!-- Обычный div без атрибута data-active -->
+    <div>Element 3</div>
+    <!-- Активный div с атрибутом data-active -->
+    <div data-active="true">Element 4 (активный)</div>
+
+
+    <!-- Блок для вывода результатов фильтрации -->
+    <div class="result" id="result"></div>
+    
+    <!-- Подключаем JavaScript файл с функцией фильтрации -->
+    <script src="filterActiveDivs.js"></script>
+</body>
+</html>
