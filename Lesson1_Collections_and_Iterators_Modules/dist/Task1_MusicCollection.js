@@ -1,3 +1,4 @@
+"use strict";
 /* Задание 1
 • Используя Symbol.iterator, создайте объект "Музыкальная коллекция", который можно итерировать. Каждая итерация должна возвращать следующий альбом из коллекции.
 
@@ -12,22 +13,18 @@ year: "Год выпуска"
 • Реализуйте кастомный итератор для объекта musicCollection. Итератор должен перебирать альбомы по порядку.
 • Используйте цикл for...of для перебора альбомов в музыкальной коллекции и вывода их на консоль в формате: Название альбома - Исполнитель (Год выпуска)
 */
-
 // # Задание 1: Музыкальная коллекция
-
 //Решение
 /** @typedef {Object} Album
  * @property {string} title
  * @property {string} artist
  * @property {string} year
  */
-
-/** 
+/**
  * @typedef {Object} AlbumIteratorResult
  * @property {Album} value
  * @property {boolean} done
  */
-
 /** @type {{
  *   albums: Album[],
  *   [Symbol.iterator]: () => {
@@ -43,11 +40,9 @@ const musicCollection = {
         { title: "The Wall", artist: "Pink Floyd", year: "1979" },
         { title: "Hotel California", artist: "Eagles", year: "1976" }
     ],
-
     [Symbol.iterator]() {
         let index = 0;
         const albums = this.albums;
-
         return {
             next() {
                 if (index < albums.length) {
@@ -64,7 +59,6 @@ const musicCollection = {
         };
     }
 };
-
 console.log('Музыкальная коллекция:');
 for (const album of musicCollection) {
     if (album && album.title && album.artist && album.year) {

@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "Task1_MusicCollection.js",
+    "Task2_RestaurantOrders.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
